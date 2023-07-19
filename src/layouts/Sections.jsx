@@ -1,6 +1,8 @@
 import Lottie from "lottie-react";
 import React, { useEffect, useState } from "react";
 
+import { CustomButton } from "../common/components";
+
 import "./Sections.css";
 import dotAnimation from "../assets/dot.json";
 import helloAnimation from "../assets/hello.json";
@@ -65,6 +67,7 @@ export default function Sections() {
               <h1
                 style={{
                   color: "#FFFFFF",
+                  fontFamily: "Gotham-Bold",
                 }}
               >
                 Explore more
@@ -97,14 +100,17 @@ export default function Sections() {
                 </div>
                 <div className="row" style={{ padding: "20px 0px 0px 20px" }}>
                   <div className="col-12">
-                    <span style={{ color: "white" }}>Asia Digital Engineering</span>
+                    <span style={{ color: "white" }}>• Asia Digital Engineering</span>
                     <br />
-                    <span style={{ color: "white" }}>Air Asia</span>
+                    <span style={{ color: "white" }}>• Air Asia</span>
                     <br />
-                    <span style={{ color: "white" }}>Airod Sdn Bhd</span>
+                    <span style={{ color: "white" }}>• Airod Sdn Bhd</span>
                     <br />
-                    <span style={{ color: "white" }}>MIMOS Berhad</span>
+                    <span style={{ color: "white" }}>• MIMOS Berhad</span>
                   </div>
+                </div>
+                <div className="row">
+                  <div className="col-12">{/* <CustomButton>Test</CustomButton> */}</div>
                 </div>
               </div>
             </div>
@@ -128,15 +134,15 @@ export default function Sections() {
                 </div>
                 <div className="row" style={{ padding: "20px 0px 0px 20px" }}>
                   <div className="col-12">
-                    <span style={{ color: "white" }}>University of Malaysia Pahang</span>
+                    <span style={{ color: "white" }}>• University of Malaysia Pahang</span>
                     <br />
-                    <span style={{ color: "white" }}>UiTM Dengkil</span>
+                    <span style={{ color: "white" }}>• UiTM Dengkil</span>
                     <br />
-                    <span style={{ color: "white" }}>SMK Seksyen 7 Shah Alam</span>
+                    <span style={{ color: "white" }}>• SMK Seksyen 7 Shah Alam</span>
                     <br />
-                    <span style={{ color: "white" }}>SMK Seksyen 2 Shah Alam</span>
+                    <span style={{ color: "white" }}>• SMK Seksyen 2 Shah Alam</span>
                     <br />
-                    <span style={{ color: "white" }}>SK Seksyen 7 Shah Alam</span>
+                    <span style={{ color: "white" }}>• SK Seksyen 7 Shah Alam</span>
                   </div>
                 </div>
               </div>

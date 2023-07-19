@@ -1,3 +1,18 @@
+@font-face {
+  font-family: "Gotham-Book";
+  src: url("../src/common/fonts/Gotham-Book.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "Gotham-Medium";
+  src: url("../src/common/fonts/Gotham-Medium.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "Gotham-Bold";
+  src: url("../src/common/fonts/Gotham-Bold.otf") format("opentype");
+}
+
 section {
   display: grid;
   align-content: center;
