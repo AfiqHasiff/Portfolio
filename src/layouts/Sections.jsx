@@ -9,23 +9,44 @@ import amazonLogo from "../common/assets/amazon.png";
 import googleLogo from "../common/assets/google.png";
 import youtubeLogo from "../common/assets/youtube.png";
 import flipkartLogo from "../common/assets/flipkart.png";
-import dotAnimation from "../common/assets/svg/dot.json";
+// import dotAnimation from "../common/assets/svg/dot.json";
 import helloAnimation from "../common/assets/svg/hello.json";
 
 export default function Sections() {
-  const observer = new IntersectionObserver((entries) => {
+  const handleJumpTo = (elementId) => {
+    const targetElement = document.getElementById(elementId);
+
+    if (targetElement) {
+      targetElement.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
+  const leftObserver = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
-        entry.target.classList.add("show");
+        entry.target.classList.add("showLeft");
       } else {
-        entry.target.classList.remove("show");
+        entry.target.classList.remove("showLeft");
+      }
+    });
+  });
+
+  const rightObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("showRight");
+      } else {
+        entry.target.classList.remove("showRight");
       }
     });
   });
 
   const observeElements = () => {
-    const hiddenSections = document.querySelectorAll(".hidden");
-    hiddenSections.forEach((section) => observer.observe(section));
+    const leftHiddenSections = document.querySelectorAll(".hiddenLeft");
+    const rightHiddenSections = document.querySelectorAll(".hiddenRight");
+
+    leftHiddenSections.forEach((section) => leftObserver.observe(section));
+    rightHiddenSections.forEach((section) => rightObserver.observe(section));
   };
 
   useEffect(() => {
@@ -35,7 +56,7 @@ export default function Sections() {
   return (
     <div className="row" style={{ backgroundColor: "#1b1f25" }}>
       <div className="col-12">
-        <section id="landingSection" class="hidden">
+        <section id="landingSection" class="hiddenLeft">
           <div className="row">
             <div className="col-12 d-flex justify-content-center">
               <Lottie animationData={helloAnimation} style={{ filter: "invert(100%)", marginLeft: "-650px" }} />
@@ -62,13 +83,13 @@ export default function Sections() {
 
         <div className="row mt-3 mb-3">
           <div className="col-12">
-            <div class="borderMiddle" />
+            <div class="borderMiddle hiddenLeft" style={{ marginTop: "-150px" }} />
           </div>
         </div>
 
-        <section id="optionSection" class="hidden">
+        <section id="optionSection" class="hiddenLeft">
           <div className="row">
-            <div className="col-12 d-flex flex-fill">
+            <div className="col-12">
               <h1
                 style={{
                   color: "#FFFFFF",
@@ -86,7 +107,12 @@ export default function Sections() {
           </div>
           <div className="row mt-4">
             <div className="col-6">
-              <div className="optionCard hidden">
+              <div
+                className="optionCard hiddenLeft"
+                onClick={() => {
+                  handleJumpTo("workExperienceSelectorSection");
+                }}
+              >
                 <div className="row" style={{ padding: "20px 0px 0px 20px" }}>
                   <div className="col-12">
                     <span style={{ fontFamily: "Gotham-Medium", fontSize: "22px" }}>Work Experience</span>
@@ -117,7 +143,12 @@ export default function Sections() {
               </div>
             </div>
             <div className="col-6">
-              <div className="optionCard hidden">
+              <div
+                className="optionCard hiddenLeft"
+                onClick={() => {
+                  handleJumpTo("educationSelectorSection");
+                }}
+              >
                 <div className="row" style={{ padding: "20px 0px 0px 20px" }}>
                   <div className="col-12">
                     <span style={{ fontFamily: "Gotham-Medium", fontSize: "22px" }}>Education</span>
@@ -154,11 +185,11 @@ export default function Sections() {
 
         <div className="row mt-3 mb-3">
           <div className="col-12">
-            <div class="borderMiddle" />
+            <div class="borderMiddle hiddenLeft" />
           </div>
         </div>
 
-        <section id="workExperienceSelectorSection" class="hidden">
+        <section id="workExperienceSelectorSection" class="hiddenLeft">
           <div className="row">
             <div className="col-12 d-flex justify-content-center">
               <h1
@@ -180,7 +211,7 @@ export default function Sections() {
           </div>
           <div className="row mt-4">
             <div className="col-12 d-flex justify-content-between">
-              <div className="boxCard hidden">
+              <div className="boxCard hiddenLeft">
                 <div className="row">
                   <div className="col-12 d-flex justify-content-center">
                     <img
@@ -196,7 +227,7 @@ export default function Sections() {
                   </div>
                 </div>
               </div>
-              <div className="boxCard hidden">
+              <div className="boxCard hiddenLeft">
                 <div className="row">
                   <div className="col-12 d-flex justify-content-center">
                     <img
@@ -212,7 +243,7 @@ export default function Sections() {
                   </div>
                 </div>
               </div>
-              <div className="boxCard hidden">
+              <div className="boxCard hiddenLeft">
                 <div className="row">
                   <div className="col-12 d-flex justify-content-center">
                     <img
@@ -228,7 +259,7 @@ export default function Sections() {
                   </div>
                 </div>
               </div>
-              <div className="boxCard hidden">
+              <div className="boxCard hiddenLeft">
                 <div className="row">
                   <div className="col-12 d-flex justify-content-center">
                     <img
@@ -248,13 +279,13 @@ export default function Sections() {
           </div>
         </section>
 
-        <div className="row mt-3 mb-3">
+        <div className="row mb-3">
           <div className="col-12">
-            <div class="borderMiddle" />
+            <div class="borderMiddle hiddenLeft" style={{ marginTop: "-165px" }} />
           </div>
         </div>
 
-        <section id="workExperienceSelectorSection" class="hidden">
+        <section id="workExperience-1" class="hiddenLeft">
           <div className="row">
             <div className="col-12 d-flex justify-content-center">
               <h1
@@ -262,7 +293,27 @@ export default function Sections() {
                   color: "#FFFFFF",
                 }}
               >
-                Work Experience
+                Asia Digital Engineering
+              </h1>
+            </div>
+          </div>
+        </section>
+
+        <div className="row mb-3">
+          <div className="col-12">
+            <div class="borderMiddle hiddenLeft" style={{ marginTop: "-165px" }} />
+          </div>
+        </div>
+
+        <section id="educationSelectorSection" class="hiddenLeft">
+          <div className="row">
+            <div className="col-12 d-flex justify-content-center">
+              <h1
+                style={{
+                  color: "#FFFFFF",
+                }}
+              >
+                Education
               </h1>
             </div>
           </div>
@@ -276,7 +327,7 @@ export default function Sections() {
           </div>
           <div className="row mt-4">
             <div className="col-12 d-flex justify-content-between">
-              <div className="boxCard hidden">
+              <div className="boxCard hiddenLeft">
                 <div className="row">
                   <div className="col-12 d-flex justify-content-center">
                     <img
@@ -292,7 +343,7 @@ export default function Sections() {
                   </div>
                 </div>
               </div>
-              <div className="boxCard hidden">
+              <div className="boxCard hiddenLeft">
                 <div className="row">
                   <div className="col-12 d-flex justify-content-center">
                     <img
@@ -308,7 +359,7 @@ export default function Sections() {
                   </div>
                 </div>
               </div>
-              <div className="boxCard hidden">
+              <div className="boxCard hiddenLeft">
                 <div className="row">
                   <div className="col-12 d-flex justify-content-center">
                     <img
@@ -324,7 +375,7 @@ export default function Sections() {
                   </div>
                 </div>
               </div>
-              <div className="boxCard hidden">
+              <div className="boxCard hiddenLeft">
                 <div className="row">
                   <div className="col-12 d-flex justify-content-center">
                     <img
