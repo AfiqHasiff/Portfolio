@@ -4,8 +4,8 @@ import React, { useEffect, useState } from "react";
 import { CustomButton } from "../common/components";
 
 import "./Sections.css";
-import dotAnimation from "../assets/dot.json";
-import helloAnimation from "../assets/hello.json";
+import dotAnimation from "../common/assets/dot.json";
+import helloAnimation from "../common/assets/hello.json";
 
 export default function Sections() {
   const observer = new IntersectionObserver((entries) => {
@@ -84,7 +84,7 @@ export default function Sections() {
               <div className="optionCard hidden">
                 <div className="row" style={{ padding: "20px 0px 0px 20px" }}>
                   <div className="col-12">
-                    <span style={{ color: "white" }}>Work Experience</span>
+                    <span style={{ color: "white", fontFamily: "Gotham-Medium" }}>Work Experience</span>
                   </div>
                 </div>
                 <div className="row" style={{ padding: "20px 0px 0px 20px" }}>
@@ -118,7 +118,7 @@ export default function Sections() {
               <div className="optionCard hidden">
                 <div className="row" style={{ padding: "20px 0px 0px 20px" }}>
                   <div className="col-12">
-                    <span style={{ color: "white" }}>Education</span>
+                    <span style={{ color: "white", fontFamily: "Gotham-Medium" }}>Education</span>
                   </div>
                 </div>
                 <div className="row" style={{ padding: "20px 0px 0px 20px" }}>
