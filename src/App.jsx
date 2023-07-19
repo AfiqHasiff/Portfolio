@@ -6,7 +6,9 @@ import Sections from "./layouts/Sections";
 export default function App() {
   return (
     <div className="App">
-      <Sections />
+      <body>
+        <Sections />
+      </body>
     </div>
   );
 }
