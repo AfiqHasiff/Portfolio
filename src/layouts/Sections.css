@@ -1,0 +1,17 @@
+section {
+  display: grid;
+  align-content: center;
+  place-items: center;
+  min-height: 100vh;
+  min-width: 100vw;
+  background-color: #333333;
+  margin-top: -1px;
+}
+
+.maxHeight {
+  max-height: 100vh;
+}
+
+.minWidth {
+  min-width: 100vw;
+}
