@@ -4,8 +4,13 @@ import React, { useEffect, useState } from "react";
 import { CustomButton } from "../common/components";
 
 import "./Sections.css";
-import dotAnimation from "../common/assets/dot.json";
-import helloAnimation from "../common/assets/hello.json";
+import teslaLogo from "../common/assets/tesla.png";
+import amazonLogo from "../common/assets/amazon.png";
+import googleLogo from "../common/assets/google.png";
+import youtubeLogo from "../common/assets/youtube.png";
+import flipkartLogo from "../common/assets/flipkart.png";
+import dotAnimation from "../common/assets/svg/dot.json";
+import helloAnimation from "../common/assets/svg/hello.json";
 
 export default function Sections() {
   const observer = new IntersectionObserver((entries) => {
@@ -55,9 +60,9 @@ export default function Sections() {
           </div>
         </section>
 
-        <div className="row">
+        <div className="row mt-3 mb-3">
           <div className="col-12">
-            <div class="borderMiddle hidden" />
+            <div class="borderMiddle" />
           </div>
         </div>
 
@@ -84,12 +89,12 @@ export default function Sections() {
               <div className="optionCard hidden">
                 <div className="row" style={{ padding: "20px 0px 0px 20px" }}>
                   <div className="col-12">
-                    <span style={{ color: "white", fontFamily: "Gotham-Medium" }}>Work Experience</span>
+                    <span style={{ fontFamily: "Gotham-Medium", fontSize: "22px" }}>Work Experience</span>
                   </div>
                 </div>
                 <div className="row" style={{ padding: "20px 0px 0px 20px" }}>
                   <div className="col-12">
-                    <span style={{ color: "white", fontSize: "42px" }}>29</span>
+                    <span style={{ fontSize: "42px" }}>29</span>
                     <span style={{ color: "#b1b1b1" }}> months</span>
                   </div>
                 </div>
@@ -100,17 +105,14 @@ export default function Sections() {
                 </div>
                 <div className="row" style={{ padding: "20px 0px 0px 20px" }}>
                   <div className="col-12">
-                    <span style={{ color: "white" }}>• Asia Digital Engineering</span>
+                    <span>• Asia Digital Engineering</span>
                     <br />
-                    <span style={{ color: "white" }}>• Air Asia</span>
+                    <span>• Air Asia</span>
                     <br />
-                    <span style={{ color: "white" }}>• Airod Sdn Bhd</span>
+                    <span>• Airod Sdn Bhd</span>
                     <br />
-                    <span style={{ color: "white" }}>• MIMOS Berhad</span>
+                    <span>• MIMOS Berhad</span>
                   </div>
-                </div>
-                <div className="row">
-                  <div className="col-12">{/* <CustomButton>Test</CustomButton> */}</div>
                 </div>
               </div>
             </div>
@@ -118,12 +120,12 @@ export default function Sections() {
               <div className="optionCard hidden">
                 <div className="row" style={{ padding: "20px 0px 0px 20px" }}>
                   <div className="col-12">
-                    <span style={{ color: "white", fontFamily: "Gotham-Medium" }}>Education</span>
+                    <span style={{ fontFamily: "Gotham-Medium", fontSize: "22px" }}>Education</span>
                   </div>
                 </div>
                 <div className="row" style={{ padding: "20px 0px 0px 20px" }}>
                   <div className="col-12">
-                    <span style={{ color: "white", fontSize: "42px" }}>152</span>
+                    <span style={{ fontSize: "42px" }}>152</span>
                     <span style={{ color: "#b1b1b1" }}> months</span>
                   </div>
                 </div>
@@ -134,15 +136,15 @@ export default function Sections() {
                 </div>
                 <div className="row" style={{ padding: "20px 0px 0px 20px" }}>
                   <div className="col-12">
-                    <span style={{ color: "white" }}>• University of Malaysia Pahang</span>
+                    <span>• University of Malaysia Pahang</span>
                     <br />
-                    <span style={{ color: "white" }}>• UiTM Dengkil</span>
+                    <span>• UiTM Dengkil</span>
                     <br />
-                    <span style={{ color: "white" }}>• SMK Seksyen 7 Shah Alam</span>
+                    <span>• SMK Seksyen 7 Shah Alam</span>
                     <br />
-                    <span style={{ color: "white" }}>• SMK Seksyen 2 Shah Alam</span>
+                    <span>• SMK Seksyen 2 Shah Alam</span>
                     <br />
-                    <span style={{ color: "white" }}>• SK Seksyen 7 Shah Alam</span>
+                    <span>• SK Seksyen 7 Shah Alam</span>
                   </div>
                 </div>
               </div>
@@ -150,43 +152,197 @@ export default function Sections() {
           </div>
         </section>
 
-        {/* <div className="row">
+        <div className="row mt-3 mb-3">
           <div className="col-12">
-            <div class="border hidden" />
+            <div class="borderMiddle" />
           </div>
         </div>
 
-        <section id="section-2" class="hidden">
+        <section id="workExperienceSelectorSection" class="hidden">
           <div className="row">
-            <div className="col-12 d-flex flex-fill">
+            <div className="col-12 d-flex justify-content-center">
               <h1
                 style={{
                   color: "#FFFFFF",
-                  marginRight: "280px",
                 }}
               >
-                About me
+                Work Experience
               </h1>
             </div>
           </div>
           <div className="row">
             <div className="col-12 d-flex justify-content-center">
-              <div style={{ maxWidth: "935px", marginLeft: "490px" }}>
-                <span
-                  style={{
-                    color: "#FFFFFF",
-                    fontSize: "24px",
-                  }}
-                >
-                  Hands-on computer and technology enthusiast. Proven afable, who served as vice president for UMP's Flying
-                  Disc Association. Adept with software engineering principles, network configuration and related skills.
-                  Equipped with experience working in a software development scrum team. Lead a software development team as
-                  a Tech Lead for the aviation industry.
-                </span>
+              <span style={{ color: "#7d8590" }}>
+                Past and current working experiences with a brief explanation on what I've accomplished and their respective
+                tech stack
+              </span>
+            </div>
+          </div>
+          <div className="row mt-4">
+            <div className="col-12 d-flex justify-content-between">
+              <div className="boxCard hidden">
+                <div className="row">
+                  <div className="col-12 d-flex justify-content-center">
+                    <img
+                      src={teslaLogo}
+                      alt=""
+                      style={{ maxWidth: "50px", maxHeight: "50px", margin: "10px 0px 0px 0px" }}
+                    />
+                  </div>
+                </div>
+                <div className="row mt-2">
+                  <div className="col-12 d-flex justify-content-center">
+                    <span style={{ fontSize: "12px" }}>ADE</span>
+                  </div>
+                </div>
+              </div>
+              <div className="boxCard hidden">
+                <div className="row">
+                  <div className="col-12 d-flex justify-content-center">
+                    <img
+                      src={googleLogo}
+                      alt=""
+                      style={{ maxWidth: "50px", maxHeight: "50px", margin: "10px 0px 0px 0px" }}
+                    />
+                  </div>
+                </div>
+                <div className="row mt-2">
+                  <div className="col-12 d-flex justify-content-center">
+                    <span style={{ fontSize: "12px" }}>AirAsia</span>
+                  </div>
+                </div>
+              </div>
+              <div className="boxCard hidden">
+                <div className="row">
+                  <div className="col-12 d-flex justify-content-center">
+                    <img
+                      src={flipkartLogo}
+                      alt=""
+                      style={{ maxWidth: "50px", maxHeight: "50px", margin: "10px 0px 0px 0px" }}
+                    />
+                  </div>
+                </div>
+                <div className="row mt-2">
+                  <div className="col-12 d-flex justify-content-center">
+                    <span style={{ fontSize: "12px" }}>Airod Sdn Bhd</span>
+                  </div>
+                </div>
+              </div>
+              <div className="boxCard hidden">
+                <div className="row">
+                  <div className="col-12 d-flex justify-content-center">
+                    <img
+                      src={youtubeLogo}
+                      alt=""
+                      style={{ maxWidth: "50px", maxHeight: "50px", margin: "10px 0px 0px 0px" }}
+                    />
+                  </div>
+                </div>
+                <div className="row mt-2">
+                  <div className="col-12 d-flex justify-content-center">
+                    <span style={{ fontSize: "12px" }}>Mimos Berhad</span>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
-        </section> */}
+        </section>
+
+        <div className="row mt-3 mb-3">
+          <div className="col-12">
+            <div class="borderMiddle" />
+          </div>
+        </div>
+
+        <section id="workExperienceSelectorSection" class="hidden">
+          <div className="row">
+            <div className="col-12 d-flex justify-content-center">
+              <h1
+                style={{
+                  color: "#FFFFFF",
+                }}
+              >
+                Work Experience
+              </h1>
+            </div>
+          </div>
+          <div className="row">
+            <div className="col-12 d-flex justify-content-center">
+              <span style={{ color: "#7d8590" }}>
+                Past and current working experiences with a brief explanation on what I've accomplished and their respective
+                tech stack
+              </span>
+            </div>
+          </div>
+          <div className="row mt-4">
+            <div className="col-12 d-flex justify-content-between">
+              <div className="boxCard hidden">
+                <div className="row">
+                  <div className="col-12 d-flex justify-content-center">
+                    <img
+                      src={teslaLogo}
+                      alt=""
+                      style={{ maxWidth: "50px", maxHeight: "50px", margin: "10px 0px 0px 0px" }}
+                    />
+                  </div>
+                </div>
+                <div className="row mt-2">
+                  <div className="col-12 d-flex justify-content-center">
+                    <span style={{ fontSize: "12px" }}>ADE</span>
+                  </div>
+                </div>
+              </div>
+              <div className="boxCard hidden">
+                <div className="row">
+                  <div className="col-12 d-flex justify-content-center">
+                    <img
+                      src={googleLogo}
+                      alt=""
+                      style={{ maxWidth: "50px", maxHeight: "50px", margin: "10px 0px 0px 0px" }}
+                    />
+                  </div>
+                </div>
+                <div className="row mt-2">
+                  <div className="col-12 d-flex justify-content-center">
+                    <span style={{ fontSize: "12px" }}>AirAsia</span>
+                  </div>
+                </div>
+              </div>
+              <div className="boxCard hidden">
+                <div className="row">
+                  <div className="col-12 d-flex justify-content-center">
+                    <img
+                      src={flipkartLogo}
+                      alt=""
+                      style={{ maxWidth: "50px", maxHeight: "50px", margin: "10px 0px 0px 0px" }}
+                    />
+                  </div>
+                </div>
+                <div className="row mt-2">
+                  <div className="col-12 d-flex justify-content-center">
+                    <span style={{ fontSize: "12px" }}>Airod Sdn Bhd</span>
+                  </div>
+                </div>
+              </div>
+              <div className="boxCard hidden">
+                <div className="row">
+                  <div className="col-12 d-flex justify-content-center">
+                    <img
+                      src={youtubeLogo}
+                      alt=""
+                      style={{ maxWidth: "50px", maxHeight: "50px", margin: "10px 0px 0px 0px" }}
+                    />
+                  </div>
+                </div>
+                <div className="row mt-2">
+                  <div className="col-12 d-flex justify-content-center">
+                    <span style={{ fontSize: "12px" }}>Mimos Berhad</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
       </div>
     </div>
   );
