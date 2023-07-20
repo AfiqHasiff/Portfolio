@@ -43,7 +43,7 @@ export default function Sections() {
     {
       company: "MIMOS Berhad",
       designation: "Full Stack Software Engineer",
-      date: "Sep 2021 - Dec 2021",
+      date: "Feb 2021 - Aug 2021",
       code: "MIMOS",
       logo: amazonLogo,
       description:
