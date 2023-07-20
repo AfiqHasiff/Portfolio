@@ -94,12 +94,17 @@ export default function Sections() {
     },
   ];
 
-  const handleJumpTo = (elementId) => {
+  const handleJumpTo = (elementId, applyOffset = false) => {
     const targetElement = document.getElementById(elementId);
 
-    if (targetElement) {
-      targetElement.scrollIntoView({ behavior: "smooth" });
-    }
+    const scrollOffset = 250;
+    const elementPosition = targetElement.getBoundingClientRect().top;
+    const offsetPosition = elementPosition - scrollOffset;
+
+    window.scrollBy({
+      top: applyOffset ? offsetPosition : elementPosition,
+      behavior: "smooth",
+    });
   };
 
   const leftObserver = new IntersectionObserver((entries) => {
@@ -303,7 +308,7 @@ export default function Sections() {
                     <div
                       className="boxCard hiddenLeft"
                       onClick={() => {
-                        handleJumpTo(`workExperience-${workIndex + 1}`);
+                        handleJumpTo(`workExperience-${workIndex + 1}`, true);
                       }}
                     >
                       <div className="row">
@@ -419,7 +424,7 @@ export default function Sections() {
                     <div
                       className="boxCard hiddenLeft"
                       onClick={() => {
-                        handleJumpTo(`workExperience-${schoolIndex + 1}`);
+                        handleJumpTo(`workExperience-${schoolIndex + 1}`, true);
                       }}
                     >
                       <div className="row">
