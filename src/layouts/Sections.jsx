@@ -390,7 +390,8 @@ export default function Sections() {
           <div className="workExperiencePostLine"></div>
         </div>
 
-        <section id="educationSelectorSection" class="hiddenRight">
+        <div id="educationSelectorSection" style={{ opacity: 0 }} />
+        <section class="hiddenRight">
           <div className="row">
             <div className="col-12 d-flex justify-content-center">
               <h1
