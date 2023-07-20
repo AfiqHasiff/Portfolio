@@ -135,7 +135,7 @@ export default function Sections() {
   }, []);
 
   return (
-    <div className="row" style={{ backgroundColor: "#1b1f25" }}>
+    <div className="sectionBackground row">
       <div className="col-12">
         <section id="landingSection" class="hiddenLeft">
           <div className="row">
@@ -390,7 +390,7 @@ export default function Sections() {
           <div className="workExperiencePostLine"></div>
         </div>
 
-        <section id="educationSelectorSection" class="hiddenLeft">
+        <section id="educationSelectorSection" class="hiddenRight">
           <div className="row">
             <div className="col-12 d-flex justify-content-center">
               <h1

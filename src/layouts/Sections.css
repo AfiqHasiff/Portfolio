@@ -10,6 +10,24 @@ span {
   color: white;
 }
 
+.sectionBackground {
+  background-image: linear-gradient(
+    180deg,
+    hsl(253deg 31% 20%) 0%,
+    hsl(252deg 30% 20%) 3%,
+    hsl(251deg 29% 19%) 6%,
+    hsl(250deg 28% 19%) 9%,
+    hsl(249deg 26% 18%) 12%,
+    hsl(248deg 25% 18%) 14%,
+    hsl(245deg 23% 17%) 17%,
+    hsl(243deg 21% 16%) 20%,
+    hsl(239deg 19% 16%) 23%,
+    hsl(234deg 18% 15%) 29%,
+    hsl(227deg 17% 14%) 40%,
+    hsl(216deg 16% 13%) 100%
+  );
+}
+
 .hiddenLeft {
   opacity: 0;
   filter: blur(5px);
@@ -161,7 +179,21 @@ span {
   width: 2px;
   top: -200px;
   bottom: -43px;
-  background-color: #fff;
+  background-image: linear-gradient(
+    0deg,
+    hsl(0deg 0% 100%) 0%,
+    hsl(125deg 35% 93%) 4%,
+    hsl(125deg 36% 86%) 8%,
+    hsl(125deg 38% 78%) 11%,
+    hsl(126deg 40% 69%) 14%,
+    hsl(127deg 44% 57%) 17%,
+    hsl(136deg 41% 51%) 21%,
+    hsl(156deg 29% 54%) 25%,
+    hsl(195deg 24% 58%) 32%,
+    hsl(229deg 35% 66%) 43%,
+    hsl(252deg 56% 70%) 61%,
+    hsl(262deg 82% 71%) 100%
+  );
 }
 
 .workExperienceLine {
@@ -171,7 +203,21 @@ span {
   width: 2px;
   top: 180px;
   bottom: 100px;
-  background-color: #fff;
+  background-image: linear-gradient(
+    180deg,
+    hsl(0deg 0% 100%) 0%,
+    hsl(125deg 35% 93%) 4%,
+    hsl(125deg 36% 86%) 8%,
+    hsl(125deg 38% 78%) 11%,
+    hsl(126deg 40% 69%) 14%,
+    hsl(127deg 44% 57%) 17%,
+    hsl(136deg 41% 51%) 21%,
+    hsl(156deg 29% 54%) 25%,
+    hsl(195deg 24% 58%) 32%,
+    hsl(229deg 35% 66%) 43%,
+    hsl(252deg 56% 70%) 61%,
+    hsl(262deg 82% 71%) 100%
+  );
 }
 
 .preLineHorizontal {
@@ -193,7 +239,7 @@ span {
   max-height: 2px;
   top: 30px;
   bottom: -50px;
-  background-color: #fff;
+  background-color: #a67af2;
 }
 
 .line::before,
