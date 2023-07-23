@@ -199,7 +199,7 @@ span {
 .workExperienceLine {
   position: absolute;
   z-index: 150;
-  left: calc(50% - 360px);
+  left: 25%;
   width: 2px;
   top: 180px;
   bottom: 100px;
@@ -223,7 +223,7 @@ span {
 .preLineHorizontal {
   position: absolute;
   z-index: 150;
-  left: calc(50% - 360px);
+  left: 25%;
   width: 25%;
   max-height: 2px;
   top: 180px;
@@ -234,7 +234,7 @@ span {
 .postLineHorizontal {
   position: absolute;
   z-index: 150;
-  left: calc(50% - 360px);
+  left: 25%;
   width: 25%;
   max-height: 2px;
   top: 30px;
