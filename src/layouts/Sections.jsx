@@ -97,14 +97,16 @@ export default function Sections() {
   const handleJumpTo = (elementId, applyOffset = false) => {
     const targetElement = document.getElementById(elementId);
 
-    const scrollOffset = 250;
-    const elementPosition = targetElement.getBoundingClientRect().top;
-    const offsetPosition = elementPosition - scrollOffset;
+    if (targetElement) {
+      const scrollOffset = 250;
+      const elementPosition = targetElement.getBoundingClientRect().top;
+      const offsetPosition = elementPosition - scrollOffset;
 
-    window.scrollBy({
-      top: applyOffset ? offsetPosition : elementPosition,
-      behavior: "smooth",
-    });
+      window.scrollBy({
+        top: applyOffset ? offsetPosition : elementPosition,
+        behavior: "smooth",
+      });
+    }
   };
 
   const leftObserver = new IntersectionObserver((entries) => {
@@ -220,16 +222,14 @@ export default function Sections() {
                 </div>
                 <div className="row" style={{ padding: "20px 0px 0px 20px" }}>
                   <div className="col-12">
-                    {(() => {
-                      return workExperiences.map((work, workIndex) => {
-                        return (
-                          <React.Fragment>
-                            <span>• {work.company}</span>
-                            <br />
-                          </React.Fragment>
-                        );
-                      });
-                    })()}
+                    {workExperiences.map((work, workIndex) => {
+                      return (
+                        <React.Fragment>
+                          <span>• {work.company}</span>
+                          <br />
+                        </React.Fragment>
+                      );
+                    })}
                   </div>
                 </div>
               </div>
@@ -259,16 +259,14 @@ export default function Sections() {
                 </div>
                 <div className="row" style={{ padding: "20px 0px 0px 20px" }}>
                   <div className="col-12">
-                    {(() => {
-                      return educationExperiences.map((school, schoolIndex) => {
-                        return (
-                          <React.Fragment>
-                            <span>• {school.schoolName}</span>
-                            <br />
-                          </React.Fragment>
-                        );
-                      });
-                    })()}
+                    {educationExperiences.map((school, schoolIndex) => {
+                      return (
+                        <React.Fragment>
+                          <span>• {school.schoolName}</span>
+                          <br />
+                        </React.Fragment>
+                      );
+                    })}
                   </div>
                 </div>
               </div>
@@ -302,33 +300,31 @@ export default function Sections() {
           </div>
           <div className="row mt-4">
             <div className="col-12 d-flex justify-content-between">
-              {(() => {
-                return workExperiences.map((work, workIndex) => {
-                  return (
-                    <div
-                      className="boxCard hiddenLeft"
-                      onClick={() => {
-                        handleJumpTo(`workExperience-${workIndex + 1}`, true);
-                      }}
-                    >
-                      <div className="row">
-                        <div className="col-12 d-flex justify-content-center">
-                          <img
-                            src={work.logo}
-                            alt=""
-                            style={{ maxWidth: "50px", maxHeight: "50px", margin: "10px 0px 0px 0px" }}
-                          />
-                        </div>
-                      </div>
-                      <div className="row mt-2">
-                        <div className="col-12 d-flex justify-content-center">
-                          <span style={{ fontSize: "12px" }}>{work.code}</span>
-                        </div>
+              {workExperiences.map((work, workIndex) => {
+                return (
+                  <div
+                    className="boxCard hiddenLeft"
+                    onClick={() => {
+                      handleJumpTo(`workExperience-${workIndex + 1}`, true);
+                    }}
+                  >
+                    <div className="row">
+                      <div className="col-12 d-flex justify-content-center">
+                        <img
+                          src={work.logo}
+                          alt=""
+                          style={{ maxWidth: "50px", maxHeight: "50px", margin: "10px 0px 0px 0px" }}
+                        />
                       </div>
                     </div>
-                  );
-                });
-              })()}
+                    <div className="row mt-2">
+                      <div className="col-12 d-flex justify-content-center">
+                        <span style={{ fontSize: "12px" }}>{work.code}</span>
+                      </div>
+                    </div>
+                  </div>
+                );
+              })}
             </div>
           </div>
         </section>
@@ -343,50 +339,48 @@ export default function Sections() {
           <div className="workExperienceLine"></div>
         </div>
 
-        {(() => {
-          return workExperiences.map((work, workIndex) => {
-            return (
-              <React.Fragment>
-                <div id={`workExperience-${workIndex + 1}`} style={{ marginTop: workIndex === 0 && "-1400px" }} />
-                <section
-                  class="workExperience hiddenRight"
-                  style={{ marginTop: workIndex === 0 && "-1400px", maxHeight: "300px", minHeight: "300px" }}
-                >
-                  <div className="row">
-                    <div className="col-12 d-flex justify-content-center">
-                      <div className="experienceCard">
-                        <div className="row">
-                          <div className="col-12">
-                            <span
-                              style={{
-                                fontFamily: "Gotham-Bold",
-                                fontSize: "32px",
-                              }}
-                            >
-                              {work.company}
-                            </span>
-                          </div>
+        {workExperiences.map((work, workIndex) => {
+          return (
+            <React.Fragment>
+              <div id={`workExperience-${workIndex + 1}`} style={{ marginTop: workIndex === 0 && "-1400px" }} />
+              <section
+                class="workExperience hiddenRight"
+                style={{ marginTop: workIndex === 0 && "-1400px", maxHeight: "300px", minHeight: "300px" }}
+              >
+                <div className="row">
+                  <div className="col-12 d-flex justify-content-center">
+                    <div className="experienceCard">
+                      <div className="row">
+                        <div className="col-12">
+                          <span
+                            style={{
+                              fontFamily: "Gotham-Bold",
+                              fontSize: "32px",
+                            }}
+                          >
+                            {work.company}
+                          </span>
                         </div>
-                        <div className="row">
-                          <div className="col-12">
-                            <span style={{ fontFamily: "Gotham-Medium" }}>{work.date}</span>
-                          </div>
+                      </div>
+                      <div className="row">
+                        <div className="col-12">
+                          <span style={{ fontFamily: "Gotham-Medium" }}>{work.date}</span>
                         </div>
-                        <div className="row mt-2">
-                          <div className="col-12">
-                            <div style={{ maxWidth: "725px" }}>
-                              <span>{work.description}</span>
-                            </div>
+                      </div>
+                      <div className="row mt-2">
+                        <div className="col-12">
+                          <div style={{ maxWidth: "725px" }}>
+                            <span>{work.description}</span>
                           </div>
                         </div>
                       </div>
                     </div>
                   </div>
-                </section>
-              </React.Fragment>
-            );
-          });
-        })()}
+                </div>
+              </section>
+            </React.Fragment>
+          );
+        })}
 
         <div className="timelineHorizontal hiddenLeft">
           <div className="postLineHorizontal"></div>
@@ -418,33 +412,31 @@ export default function Sections() {
           </div>
           <div className="row mt-4">
             <div className="col-12 d-flex justify-content-between">
-              {(() => {
-                return educationExperiences.map((school, schoolIndex) => {
-                  return (
-                    <div
-                      className="boxCard hiddenLeft"
-                      onClick={() => {
-                        handleJumpTo(`workExperience-${schoolIndex + 1}`, true);
-                      }}
-                    >
-                      <div className="row">
-                        <div className="col-12 d-flex justify-content-center">
-                          <img
-                            src={school.logo}
-                            alt=""
-                            style={{ maxWidth: "50px", maxHeight: "50px", margin: "10px 0px 0px 0px" }}
-                          />
-                        </div>
-                      </div>
-                      <div className="row mt-2">
-                        <div className="col-12 d-flex justify-content-center">
-                          <span style={{ fontSize: "12px" }}>{school.code}</span>
-                        </div>
+              {educationExperiences.map((school, schoolIndex) => {
+                return (
+                  <div
+                    className="boxCard hiddenLeft"
+                    onClick={() => {
+                      handleJumpTo(`workExperience-${schoolIndex + 1}`, true);
+                    }}
+                  >
+                    <div className="row">
+                      <div className="col-12 d-flex justify-content-center">
+                        <img
+                          src={school.logo}
+                          alt=""
+                          style={{ maxWidth: "50px", maxHeight: "50px", margin: "10px 0px 0px 0px" }}
+                        />
                       </div>
                     </div>
-                  );
-                });
-              })()}
+                    <div className="row mt-2">
+                      <div className="col-12 d-flex justify-content-center">
+                        <span style={{ fontSize: "12px" }}>{school.code}</span>
+                      </div>
+                    </div>
+                  </div>
+                );
+              })}
             </div>
           </div>
         </section>
