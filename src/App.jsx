@@ -48,18 +48,18 @@ export default function App() {
     }
 
     setTimeout(() => {
-      parallaxElement.forEach((el) => {
-        el.style.transition = "0.45s cubic-bezier(0.2, 0.49, 0.32, 0.99)";
+      parallaxElement.forEach((element) => {
+        element.style.transition = "0.45s cubic-bezier(0.2, 0.49, 0.32, 0.99)";
       });
     }, timeline.endTime() * 1000);
 
     Array.from(parallaxElement)
-      .filter((el) => !el.classList.contains("text"))
-      .forEach((el) => {
+      .filter((element) => !element.classList.contains("text"))
+      .forEach((element) => {
         timeline.from(
-          el,
+          element,
           {
-            top: `${el.offsetHeight / 2 + +el.dataset.distance}px`,
+            top: `${element.offsetHeight / 2 + +element.dataset.distance}px`,
             duration: 3.5,
             ease: "power3.out",
           },
@@ -120,7 +120,7 @@ export default function App() {
 
     loaderElement.forEach((element) => {
       if (element !== null) {
-        element.style.opacity = 0;
+        element.style.display = "none";
       }
     });
   };
